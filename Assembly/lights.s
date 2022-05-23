@@ -8,7 +8,7 @@
 .global getColor
 .global setPixel
 .text
-#openfb(fb#) returns a pointer to a memory mapped 8x8x16 grid.
+#openfb(fb) returns a pointer to a memory mapped 8x8x16 grid.
 openfb:	ldr r8,=FILENAME
 	add r0,r0,#48
 	strb r0,[r8,#7]
