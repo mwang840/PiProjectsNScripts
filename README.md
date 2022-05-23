@@ -9,3 +9,8 @@ Red X
 Factorial
 
 Clearing the Lights
+
+
+C
+
+Blackjack (Not finished)
