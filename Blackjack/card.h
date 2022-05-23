@@ -10,5 +10,5 @@ theCard *shuffle(theCard *cards);
 void revealHand(theCard *cards);
 int totalHand(theCard *cards);
 int countHand(theCard *cards);
-void removeCard(theCard *cards);
+void removeCards(theCard *cards);
 theCard *deal(theCard *cards);
