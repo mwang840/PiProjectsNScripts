@@ -98,3 +98,20 @@ int totalHand(theCard *cards){
     }
     return totalRank;
 }
+
+//Shuffles the cards in a deck
+theCard *shuffle(theCard *cards){
+    int totalSize = totalHand(cards);
+    theCard *newDeck = cards;
+    for(int i = 0; i < totalSize/2; ++i){
+        cards = cards->next;
+    }
+    theCard *rand = cards->next;
+    rand->next = 0;
+    theCard *otherHalf = 0;
+    while(newDeck != otherHalf){
+        theCard *temp;
+        newDeck = createDeck();
+    }
+    return rand;
+}
