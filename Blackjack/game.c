@@ -4,7 +4,7 @@
  
 /* This main() is constructed just for testing purposes. See
  * play_game() below for actually connecting together the pieces */
-
+void playGame();
 // Don't be afraid of writing "scaffolding code" like this: yes, it will be
 // removed at the end, but that doesn't make it a waste of effort!
 int main(int argc, char *argv[]) {
@@ -25,5 +25,10 @@ int main(int argc, char *argv[]) {
 
 // organize all the helper functions to play a complete game
 void play_game(void) {
+    theCard *bigDeck = createDeck();
+    
+    for(int i = 0; i < 7; ++i){
+        bigDeck = shuffle(bigDeck);
+    }
     return;
 }
