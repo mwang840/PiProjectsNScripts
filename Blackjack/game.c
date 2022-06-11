@@ -30,5 +30,6 @@ void play_game(void) {
     for(int i = 0; i < 7; ++i){
         bigDeck = shuffle(bigDeck);
     }
+    deal(bigDeck);
     return;
 }
