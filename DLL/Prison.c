@@ -10,3 +10,7 @@ int main(){
     printf("Hello");
     return 0;
 }
+
+void printlist(){
+    return;
+}
