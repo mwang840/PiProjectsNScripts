@@ -30,6 +30,11 @@ void play_game(void) {
     for(int i = 0; i < 7; ++i){
         bigDeck = shuffle(bigDeck);
     }
-    deal(bigDeck);
+    theCard *user;
+    theCard *dealer;
+    user = deal(bigDeck);
+    user->next = deal(bigDeck);
+    dealer = deal(bigDeck);
+    printf("Current hand is " + user->rank + user->suit);
     return;
 }
