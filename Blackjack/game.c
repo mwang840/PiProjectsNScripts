@@ -35,6 +35,10 @@ void play_game(void) {
     user = deal(bigDeck);
     user->next = deal(bigDeck);
     dealer = deal(bigDeck);
-    printf("Current hand is " + user->rank + user->suit);
+    printf("Hit or stand");
+    char *hitOrStand = (char *)malloc(sizeof(char) * 6);
+    while(scanf("%s", hitOrStand)){
+
+    }
     return;
 }
