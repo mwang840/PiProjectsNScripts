@@ -38,19 +38,14 @@ void play_game(void) {
     printf("Hit or stand");
     char *hitOrStand = (char *)malloc(sizeof(char) * 6);
     while(scanf("%s", hitOrStand)){
-        if(hitOrStand == "H" || hitOrStand =="h"){
+        if(strcmp(hitOrStand, 0) == "H" || strcmp(hitOrStand, 0) =="h" || strcmp(hitOrStand, 0) =="Hit" || strcmp(hitOrStand, 0) == "hit"){
             if(totalHand(user) <= 21){
                 user->next = deal(bigDeck); 
             }
-            else{
-                if(totalHand(user) > totalHand(dealer)){
-                    printf("You Won. Yayyy!\n");
-                }
-                else{
-                    printf("You lost. Booo!\n");
-                }
+            else if(totalHand(user) > 21){
+               printf("You lost. Booo!\n");
+               return;
             }
-            
         }
     }
     return;
