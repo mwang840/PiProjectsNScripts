@@ -1,12 +1,15 @@
-CARD:=card.o
+CARD:=cardAR.o
 
 all: game
 
 %.o: %.c card.h
 	cc -g -c $<
 
-game: game.o $(CARD)
+game: card.h game.o $(CARD)
 	cc -g -o game game.o $(CARD)
 
+run: game
+	./game
+
 clean:
-	rm -f game game.o card.o
+	rm -f game *.o 
