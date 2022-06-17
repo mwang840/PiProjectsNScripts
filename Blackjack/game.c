@@ -48,7 +48,7 @@ void play_game(void) {
                return;
             }
         }
-        else if(strcmp(hitOrStand, 0) == "S" || strcmp(hitOrStand, 0) =="s" || strcmp(hitOrStand, 0) =="Stand" || strcmp(hitOrStand, 0) == "stand"){
+        else if(strcmp(hitOrStand, "S") == 0 || strcmp(hitOrStand, "s") ==0 || strcmp(hitOrStand, "Stand") == 0 || strcmp(hitOrStand, "stand") == 0){
             score += totalHand(user);
         }
         dealer->next = deal(bigDeck);
