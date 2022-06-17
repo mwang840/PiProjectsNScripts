@@ -1,5 +1,6 @@
 #include "card.h"
 #include <stdlib.h> // for drand48
+#include <string.h>
 #include <stdio.h>
  
 /* This main() is constructed just for testing purposes. See
