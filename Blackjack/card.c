@@ -98,6 +98,15 @@ int totalHand(theCard *cards){
     }
     return totalRank;
 }
+//Shows each card in a pile
+void showPile(theCard *pile){
+    theCard *head = pile;
+    while(head != NULL){
+        printf("Suit of %c and rank of %d", head->suit, head->rank);
+        head = head->next;
+    }
+}
+
 
 //Shuffles the cards in a deck
 theCard *shuffle(theCard *cards){
