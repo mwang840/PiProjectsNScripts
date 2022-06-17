@@ -25,6 +25,7 @@ int main(int argc, char *argv[]) {
 
 // organize all the helper functions to play a complete game
 void play_game(void) {
+    int score = 0;
     theCard *bigDeck = createDeck();
     
     for(int i = 0; i < 7; ++i){
@@ -38,7 +39,7 @@ void play_game(void) {
     printf("Hit or stand");
     char *hitOrStand = (char *)malloc(sizeof(char) * 6);
     while(scanf("%s", hitOrStand)){
-        if(strcmp(hitOrStand, 0) == "H" || strcmp(hitOrStand, 0) =="h" || strcmp(hitOrStand, 0) =="Hit" || strcmp(hitOrStand, 0) == "hit"){
+        if(strcmp(hitOrStand, "H") == 0 || strcmp(hitOrStand, "h") == 0 || strcmp(hitOrStand, "Hit") == 0 || strcmp(hitOrStand, "hit") == 0){
             if(totalHand(user) <= 21){
                 user->next = deal(bigDeck); 
             }
@@ -47,6 +48,10 @@ void play_game(void) {
                return;
             }
         }
+        else if(strcmp(hitOrStand, 0) == "S" || strcmp(hitOrStand, 0) =="s" || strcmp(hitOrStand, 0) =="Stand" || strcmp(hitOrStand, 0) == "stand"){
+            score += totalHand(user);
+        }
+        dealer->next = deal(bigDeck);
     }
     return;
 }
