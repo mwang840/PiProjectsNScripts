@@ -2,13 +2,13 @@
 Performing some small side projects on the Pi in different languages
 
 
-ASSEMBLY
+**ASSEMBLY**
 
-Red X
+-[X]Red X
 
-Factorial
+-[X]Factorial
 
-Clearing the Lights
+-[X]Clearing the Lights
 
 
 C
