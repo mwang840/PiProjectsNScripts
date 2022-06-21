@@ -35,6 +35,7 @@ int main(int argc, char *argv[]) {
 void play_game(void) {
     int score = 0;
     int dealerScore = 0;
+    int totalPile = 0;
     theCard *bigDeck = createDeck();
     
     for(int i = 0; i < 7; ++i){
@@ -58,21 +59,23 @@ void play_game(void) {
                 temp = temp->next;
             }
             temp->next = deal(bigDeck);
+            totalPile = totalHand(temp);
+            showPile(user);
             score += totalHand(temp);
-            if(user->suit == "J" || user->suit == "A" || user->suit == "K"){
-                score += 10;
-            }
+            score += totalHand(user);
+            if(totalPile <= 21){
+            score += totalHand(temp);
             score += totalHand(user);
             if(totalHand(user) <= 21){
                 user->next = deal(bigDeck); 
             }
-            else if(totalHand(user) > 21){
+            else if(totalPile> 21){
                printf("You lost. Booo!\n");
                return;
             }
         }
         else if(strcmp(hitOrStand, "S") == 0 || strcmp(hitOrStand, "s") ==0 || strcmp(hitOrStand, "Stand") == 0 || strcmp(hitOrStand, "stand") == 0){
-            
+            break;
         }
         if(dealerScore){
 
