@@ -4,11 +4,11 @@ Performing some small side projects on the Pi in different languages
 
 **ASSEMBLY**
 
--[X] Red X
+- [X] Red X
 
--[X] Factorial
+- [X] Factorial
 
--[X] Clearing the Lights
+- [X] Clearing the Lights
 
 
 C
