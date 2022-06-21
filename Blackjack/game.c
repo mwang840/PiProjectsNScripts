@@ -64,6 +64,9 @@ void play_game(void) {
             score += totalHand(temp);
             score += totalHand(user);
             if(totalPile <= 21){
+            score += totalHand(temp);
+            score += totalHand(user);
+            if(totalHand(user) <= 21){
                 user->next = deal(bigDeck); 
             }
             else if(totalPile> 21){

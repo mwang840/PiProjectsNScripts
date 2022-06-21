@@ -1,0 +1,19 @@
+{
+  "name": "piprojectsnscripts",
+  "version": "1.0.0",
+  "description": "Raspberry pi scripts in assembly and some other languages (C, C++, java,",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mwang840/PiProjectsNScripts.git"
+  },
+  "author": "mwang840",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mwang840/PiProjectsNScripts/issues"
+  },
+  "homepage": "https://github.com/mwang840/PiProjectsNScripts#readme"
+}
