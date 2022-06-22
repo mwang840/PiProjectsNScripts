@@ -11,6 +11,6 @@ Performing some small side projects on the Pi in different languages
 - [X] Clearing the Lights
 
 
-C
+**C**
 
-Blackjack (Not finished)
+- [ ] Blackjack (Not finished)
