@@ -50,28 +50,28 @@ void play_game(void) {
     showPile(user);
     printf("Dealers hand is\n");
     showPile(dealer);
-    printf("Hit or stand\n");
+    printf("Hit or stand?\n");
     char *hitOrStand = (char *)malloc(sizeof(char) * 6);
     while(scanf("%s", hitOrStand)){
         if(strcmp(hitOrStand, "H") == 0 || strcmp(hitOrStand, "h") == 0 || strcmp(hitOrStand, "Hit") == 0 || strcmp(hitOrStand, "hit") == 0){
+            //User pointer is now being refered as the temp pointer
             theCard *temp = user;
             while(temp != NULL){
                 temp = temp->next;
             }
             temp->next = deal(bigDeck);
             totalPile = totalHand(temp);
-            showPile(user);
-            score += totalHand(temp);
-            score += totalHand(user);
-            if(totalPile <= 21){
-            score += totalHand(temp);
-            score += totalHand(user);
-            if(totalHand(user) <= 21){
-                user->next = deal(bigDeck); 
-            }
-            else if(totalPile> 21){
+            showPile(temp);
+            if(totalPile> 21){
                printf("You lost. Booo!\n");
                return;
+            }
+            else if(totalPile == 21){
+                break;
+            }
+            else{
+                printf("Your total score is : %d\n ", totalPile);
+                printf("Hit or stand?\n");
             }
         }
         else if(strcmp(hitOrStand, "S") == 0 || strcmp(hitOrStand, "s") ==0 || strcmp(hitOrStand, "Stand") == 0 || strcmp(hitOrStand, "stand") == 0){
