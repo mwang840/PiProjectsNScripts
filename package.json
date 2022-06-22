@@ -2,7 +2,7 @@
   "name": "piprojectsnscripts",
   "version": "1.0.0",
   "description": "Raspberry pi scripts in assembly and some other languages (C, C++, java,",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
