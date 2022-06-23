@@ -82,6 +82,9 @@ void play_game(void) {
         bool dealerTurn = true;
         while(dealerTurn){
             theCard *tempDealer = dealer;
+            while(tempDealer != NULL){
+                tempDealer = tempDealer->next;
+            }
         }
     }
     return;
