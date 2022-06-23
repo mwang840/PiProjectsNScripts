@@ -2,6 +2,7 @@
 #include <stdlib.h> // for drand48
 #include <string.h>
 #include <stdio.h>
+#include <stdbool.h>
  
 /* This main() is constructed just for testing purposes. See
  * play_game() below for actually connecting together the pieces */
@@ -77,11 +78,11 @@ void play_game(void) {
         else if(strcmp(hitOrStand, "S") == 0 || strcmp(hitOrStand, "s") ==0 || strcmp(hitOrStand, "Stand") == 0 || strcmp(hitOrStand, "stand") == 0){
             break;
         }
-        if(dealerScore){
-
+        printf("Now its the dealers turn boi\n");
+        bool dealerTurn = true;
+        while(dealerTurn){
+            theCard *tempDealer = dealer;
         }
-        dealer->next = deal(bigDeck);
-        dealerScore += totalHand(dealer);
     }
     return;
 }
