@@ -8,6 +8,8 @@
  * play_game() below for actually connecting together the pieces */
 // Don't be afraid of writing "scaffolding code" like this: yes, it will be
 // removed at the end, but that doesn't make it a waste of effort!
+int showPile(theCard *card);
+void play_game();
 int main(int argc, char *argv[]) {
     // the below "seeds" the random number generator with the first argument
     // given to the program. I.e. "./game 5" will always play with the same
@@ -21,7 +23,7 @@ int main(int argc, char *argv[]) {
  }
 
 // organize all the helper functions to play a complete game
-void play_game(void) {
+void play_game() {
     theCard *bigDeck = createDeck();
     int totalPile = 0;
     for(int i = 0; i < 7; ++i){
