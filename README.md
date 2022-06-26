@@ -13,4 +13,4 @@ Performing some small side projects on the Pi in different languages
 
 **C**
 
-- [ ] Blackjack (Not finished)
+- [X] Blackjack (Figure out gcc error)
