@@ -6,14 +6,6 @@
  
 /* This main() is constructed just for testing purposes. See
  * play_game() below for actually connecting together the pieces */
-void playGame();
-int countPile(theCard *cards);
-void showPile(theCard *pile);
-void revealHand(theCard *cards);
-theCard *deal(theCard *cards);
-theCard *createDeck();
-theCard *shuffle(theCard *pile);
-int totalHand(theCard *cards);
 // Don't be afraid of writing "scaffolding code" like this: yes, it will be
 // removed at the end, but that doesn't make it a waste of effort!
 int main(int argc, char *argv[]) {
