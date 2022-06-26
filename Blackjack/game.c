@@ -24,11 +24,7 @@ int main(int argc, char *argv[]) {
     if(argc>1) {
         srand48(atol(argv[1]));
     }
-    theCard card3={4,'C',NULL}, card2={1,'H',NULL}, card1={12,'S',NULL};
-    card1.next=&card2; card2.next=&card3; // Why &card2 and &card3?
-    theCard *deck=&card1;
-    printf("Cards in deck: %d\n",countPile(deck));
-    showPile(deck);
+    play_game();
     return 0;
  }
 
@@ -84,6 +80,30 @@ void play_game(void) {
             theCard *tempDealer = dealer;
             while(tempDealer != NULL){
                 tempDealer = tempDealer->next;
+            }
+            tempDealer->next = deal(bigDeck);
+            printf("Dealer hand is : ");
+            showPile(tempDealer);
+            printf("\n");
+            int onlyDealer = totalHand(dealer);
+            if(onlyDealer >= 17 && onlyDealer <= 21){
+                if(onlyDealer > totalPile){
+                    printf("You lost boi\n");
+                    printf("Dealers total hand is %d", onlyDealer);
+                    printf("Your hand is %d");
+                    return;
+                }
+                else if(totalPile > onlyDealer){
+                    printf("Congratulations you won!\n");
+                    printf("Dealers total hand is %d", onlyDealer);
+                    printf("Your hand is %d");
+                    return;
+                }
+                else if(totalPile == onlyDealer){
+                    printf("Sorry but according to the rules, equal pile means dealer wins.\n");
+                    printf("Dealers and your total hand is %d", onlyDealer);
+                    return;
+                }
             }
         }
     }
