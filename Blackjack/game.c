@@ -22,11 +22,8 @@ int main(int argc, char *argv[]) {
 
 // organize all the helper functions to play a complete game
 void play_game(void) {
-    int score = 0;
-    int dealerScore = 0;
-    int totalPile = 0;
     theCard *bigDeck = createDeck();
-    
+    int totalPile = 0;
     for(int i = 0; i < 7; ++i){
         bigDeck = shuffle(bigDeck);
     }
