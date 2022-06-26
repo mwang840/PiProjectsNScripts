@@ -6,16 +6,10 @@
  
 /* This main() is constructed just for testing purposes. See
  * play_game() below for actually connecting together the pieces */
-void playGame();
-int countPile(theCard *cards);
-void showPile(theCard *pile);
-void revealHand(theCard *cards);
-theCard *deal(theCard *cards);
-theCard *createDeck();
-theCard *shuffle(theCard *pile);
-int totalHand(theCard *cards);
 // Don't be afraid of writing "scaffolding code" like this: yes, it will be
 // removed at the end, but that doesn't make it a waste of effort!
+int showPile(theCard *card);
+void play_game();
 int main(int argc, char *argv[]) {
     // the below "seeds" the random number generator with the first argument
     // given to the program. I.e. "./game 5" will always play with the same
@@ -24,21 +18,14 @@ int main(int argc, char *argv[]) {
     if(argc>1) {
         srand48(atol(argv[1]));
     }
-    theCard card3={4,'C',NULL}, card2={1,'H',NULL}, card1={12,'S',NULL};
-    card1.next=&card2; card2.next=&card3; // Why &card2 and &card3?
-    theCard *deck=&card1;
-    printf("Cards in deck: %d\n",countPile(deck));
-    showPile(deck);
+    play_game();
     return 0;
  }
 
 // organize all the helper functions to play a complete game
-void play_game(void) {
-    int score = 0;
-    int dealerScore = 0;
-    int totalPile = 0;
+void play_game() {
     theCard *bigDeck = createDeck();
-    
+    int totalPile = 0;
     for(int i = 0; i < 7; ++i){
         bigDeck = shuffle(bigDeck);
     }
@@ -82,6 +69,33 @@ void play_game(void) {
         bool dealerTurn = true;
         while(dealerTurn){
             theCard *tempDealer = dealer;
+            while(tempDealer != NULL){
+                tempDealer = tempDealer->next;
+            }
+            tempDealer->next = deal(bigDeck);
+            printf("Dealer hand is : ");
+            showPile(tempDealer);
+            printf("\n");
+            int onlyDealer = totalHand(dealer);
+            if(onlyDealer >= 17 && onlyDealer <= 21){
+                if(onlyDealer > totalPile){
+                    printf("You lost boi\n");
+                    printf("Dealers total hand is %d", onlyDealer);
+                    printf("Your hand is %d");
+                    return;
+                }
+                else if(totalPile > onlyDealer){
+                    printf("Congratulations you won!\n");
+                    printf("Dealers total hand is %d", onlyDealer);
+                    printf("Your hand is %d");
+                    return;
+                }
+                else if(totalPile == onlyDealer){
+                    printf("Sorry but according to the rules, equal pile means dealer wins.\n");
+                    printf("Dealers and your total hand is %d", onlyDealer);
+                    return;
+                }
+            }
         }
     }
     return;
