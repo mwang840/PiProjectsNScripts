@@ -14,3 +14,4 @@ Performing some small side projects on the Pi in different languages
 **C**
 
 - [X] Blackjack (Figure out gcc error)
+- [ ] Linked List (double)
