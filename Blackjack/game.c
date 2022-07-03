@@ -10,7 +10,8 @@
 // removed at the end, but that doesn't make it a waste of effort!
 int showPile(theCard *card);
 void play_game();
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+ {
     // the below "seeds" the random number generator with the first argument
     // given to the program. I.e. "./game 5" will always play with the same
     // shuffle, and "./game 99" will play with a different shuffle. Leave this
