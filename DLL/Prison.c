@@ -5,8 +5,8 @@
 void push(char *name, int age, char *prisonId, int sentence, char *crimes);
 char *remove(char *prisonId);
 void sentence(char *name);
-void printlist(Prisoner *p);
-void printInReverse(Prisoner *p);
+void printlist(struct Prisoner *p);
+void printInReverse(struct Prisoner *p);
 int totalPrisoners(struct Prisoner *head);
 
 
@@ -16,7 +16,7 @@ int main(){
 }
 
 //Prints the list in the forward direction (next)
-void printlist(Prisoner *p){
+void printlist(struct Prisoner *p){
     struct Prisoner *temp = p;
     struct Prisoner *last;
     while(temp != NULL){
@@ -27,7 +27,7 @@ void printlist(Prisoner *p){
 }
 
 //Same thing but its in reverse order (prev)
-void printInReverse(Prisoner *p){
+void printInReverse(struct Prisoner *p){
     struct Prisoner *temp = p;
     struct Prisoner *first;
     while(temp != NULL){
@@ -44,7 +44,7 @@ char *remove(char *id){
     }
     while(tempPrison != NULL){
         if(tempPrison->prisonId == id){
-            struct Prisoner removed = tempPrison;
+            struct Prisoner *removed = tempPrison;
         }
         tempPrison = tempPrison->next;
     }
