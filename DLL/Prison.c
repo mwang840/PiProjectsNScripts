@@ -7,6 +7,8 @@ char *remove(char *prisonId);
 void sentence(char *name);
 void printlist(Prisoner *p);
 void printInReverse(Prisoner *p);
+int totalPrisoners(struct Prisoner *head);
+
 
 int main(){
     printf("Hello");
@@ -15,9 +17,8 @@ int main(){
 
 //Prints the list in the forward direction (next)
 void printlist(Prisoner *p){
-    
-    Prisoner *temp = p;
-    Prisoner *last;
+    struct Prisoner *temp = p;
+    struct Prisoner *last;
     while(temp != NULL){
         printf("Prisoner name is %s, is %d years old, has an id of %s, is in jail for %d years due to the crimes of %s he committed", temp->name, temp->age, temp->prisonId, temp->sentence, temp->crimes);
         last = temp;
@@ -27,8 +28,8 @@ void printlist(Prisoner *p){
 
 //Same thing but its in reverse order (prev)
 void printInReverse(Prisoner *p){
-    Prisoner *temp = p;
-    Prisoner *first;
+    struct Prisoner *temp = p;
+    struct Prisoner *first;
     while(temp != NULL){
         printf("Prisoner name is %s, is %d years old, has an id of %s, is in jail for %d years due to the crimes of %s he committed", temp->name, temp->age, temp->prisonId, temp->sentence, temp->crimes);
         first = temp;
@@ -37,13 +38,26 @@ void printInReverse(Prisoner *p){
 }
 
 char *remove(char *id){
-    Prisoner tempPrison = (struct Prisoner*)malloc(sizeof(struct Prisoner));
+    struct Prisoner tempPrison = (struct Prisoner*)malloc(sizeof(struct Prisoner));
     if(id== NULL || id == ""){
         return NULL;
     }
     while(tempPrison != NULL){
         if(tempPrison->prisonId == id){
-
+            struct Prisoner removed = tempPrison;
         }
+        tempPrison = tempPrison->next;
     }
+    return removed->prisonId;
+}
+
+//Gets total prisoners in the prison
+int totalPrisoners(struct Prisoner *head){
+    int convicts = 0;
+    struct Prisoner *currentPrisoner = head;
+    while(currentPrisoner != NULL){
+        convicts++;
+        currentPrisoner = currentPrisoner->next;
+    }
+    
 }

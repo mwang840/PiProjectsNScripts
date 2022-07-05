@@ -16,4 +16,4 @@ struct Prisoner *pop();
 int remove(char *prisonId);
 void sentence(char *name);
 void printlist();
-int totalPrisoners();
+int totalPrisoners(struct Prisoner *head);
