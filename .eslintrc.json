@@ -16,5 +16,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "no-irregular-whitespace": "error",
+        "no-setter-return": "error"
     }
 }
